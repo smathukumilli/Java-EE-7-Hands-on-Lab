@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- specifying style for bootstrap buttons  -->  
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+     <!-- Java Script code for form validations -->
+    <script>
+function validateForm() {
+    var x = document.forms["myform"]["firstname"].value;
+     var y = document.forms["myform"]["lastname"].value;
+     var z = document.forms["myform"]["email"].value;
+       var value = document.forms["myform"]["password"].value;
+      var at = z.indexOf("@");
+    var dot = z.lastIndexOf(".");
+    if (x === null || x === "") {
+        alert("FirstName must be filled out");
+        
+        return false;
+    }else if(y === null || y === "") {
+        alert("lastname must be filled out");
+        return false;
+    }
+     else if (at<1 || dot<at+2 ) {
+        alert("Not a valid e-mail address");
+        return false;
+    } else if ( value == null || value == "") {
+        alert("Not a valid password");
+        return false;
+    }else
+    {
+    return true;
+    } 
+  
+}
+</script>
+    </head>
+    <body>
+      
+        <form name="myform" method="post" onsubmit="return validateForm()" action="register">
+            <p align="center"><b>welcome</b></p> 
+            <p align="center"><b>Firstname:</b>
+           <input type="text" name="firstname">
+           <b>lastname:</b>
+            <input type="text" name="lastname"><br>
+           <b> E-mail:</b>
+          <input type="text" name="email">
+          <b> Password :</b>
+         <input type="password" name="password">
+   
+             <input type="submit" class="btn btn-info"  value="register"></p>
+           
+            
+        </form>
+    </body>
+</html>
